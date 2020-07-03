@@ -1,2 +1,2 @@
 # mocaplib_examples
-Examples of MocapLib
+Examples of MoCapLib
