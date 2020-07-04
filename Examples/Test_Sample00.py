@@ -18,6 +18,9 @@ tgt_c3d_path = os.path.splitext(__file__)[0]+'_result.c3d'
 tgt_log_path = os.path.splitext(__file__)[0]+'_result.log'
 
 acq = ba.get_acq(src_c3d_path)
+pt_names = ba.get_point_names(acq, tgt_types=None)
+analog_names = ba.get_analog_names(acq)
 dict_events = ba.get_dict_events(acq)
-dict_markers = ba.get_dict_markers(acq)
+dict_points = ba.get_dict_points(acq, blocked_nan=True, resid=True, tgt_types=None)
 dict_analogs = ba.get_dict_analogs(acq)
+dict_groups = ba.get_dict_metadata(acq)
