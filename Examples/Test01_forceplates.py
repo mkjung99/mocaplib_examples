@@ -10,23 +10,29 @@ from mocaplib import btkapp as ba
 import numpy as np
 #%%
 current_f_dir_path = os.path.dirname(__file__)
+
 c3d_sample_dir_path = os.path.join(current_f_dir_path, r'..\Samples_C3D\Sample00\Vicon Motion Systems')
 src_c3d_path = os.path.join(c3d_sample_dir_path, 'pyCGM2 lower limb CGM24 Walking01.c3d')
+
 # c3d_sample_dir_path = os.path.join(current_f_dir_path, r'..\Samples_C3D\Sample00\Codamotion')
 # src_c3d_path = os.path.join(c3d_sample_dir_path, 'codamotion_gaitwands_19970212.c3d')
-# c3d_sample_dir_path = os.path.join(current_f_dir_path, r'..\Samples_C3D\Sample05')
-# src_c3d_path = os.path.join(c3d_sample_dir_path, 'vicon512.c3d')
+
 # c3d_sample_dir_path = os.path.join(current_f_dir_path, r'..\Samples_C3D\Sample01')
 # src_c3d_path = os.path.join(c3d_sample_dir_path, 'Eb015pr.c3d')
+
+# c3d_sample_dir_path = os.path.join(current_f_dir_path, r'..\Samples_C3D\Sample05')
+# src_c3d_path = os.path.join(c3d_sample_dir_path, 'vicon512.c3d')
+
 # c3d_sample_dir_path = os.path.join(current_f_dir_path, r'..\Samples_C3D\Sample10')
 # src_c3d_path = os.path.join(c3d_sample_dir_path, 'TYPE-4a.c3d')
-# tgt_c3d_path = os.path.splitext(__file__)[0]+'_result.c3d'
-# tgt_log_path = os.path.splitext(__file__)[0]+'_result.log'
+
+# c3d_sample_dir_path = os.path.join(current_f_dir_path, r'..\Samples_C3D\Sample28')
+# src_c3d_path = os.path.join(c3d_sample_dir_path, 'type1.c3d')
 
 acq = ba.open_c3d(src_c3d_path)
 
-fp_output = ba.get_fp_output(acq, 5.0)
-wc_output = ba.get_fp_wrench(acq, 5.0)
+fp_output = ba.get_fp_output(acq, None)
+wc_output = ba.get_fp_wrench(acq, 0.0)
 
 f_global_btk = wc_output[0]['FORCE']
 f_global_manual = fp_output[0]['F_SURF_GLOBAL']
@@ -39,5 +45,9 @@ diff_m_cop = m_cop_btk-m_cop_manual
 cop_global_btk = wc_output[0]['POS']*0.001
 cop_global_manual = fp_output[0]['COP_GLOBAL']
 diff_cop_global = cop_global_btk-cop_global_manual
+
+# cop_local_input = fp_output[0]['COP_LOCAL2']
+# cop_local_manual = fp_output[0]['COP_LOCAL']
+# diff_cop_local = cop_local_input-cop_local_manual
 
 md_dict = ba.get_dict_metadata(acq)
