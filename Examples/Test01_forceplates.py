@@ -45,9 +45,3 @@ diff_m_cop = m_cop_btk-m_cop_manual
 cop_global_btk = wc_output[0]['POS']*0.001
 cop_global_manual = fp_output[0]['COP_GLOBAL']
 diff_cop_global = cop_global_btk-cop_global_manual
-
-# cop_local_input = fp_output[0]['COP_LOCAL2']
-# cop_local_manual = fp_output[0]['COP_LOCAL']
-# diff_cop_local = cop_local_input-cop_local_manual
-
-md_dict = ba.get_dict_metadata(acq)
