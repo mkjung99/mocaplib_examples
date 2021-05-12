@@ -23,6 +23,9 @@ src_c3d_path = os.path.join(c3d_sample_dir_path, 'pyCGM2 lower limb CGM24 Walkin
 # c3d_sample_dir_path = os.path.join(cwd, r'..\Samples_C3D\Sample00\Codamotion')
 # src_c3d_path = os.path.join(c3d_sample_dir_path, 'codamotion_gaitwands_19970212.c3d')
 
+# c3d_sample_dir_path = os.path.join(cwd, r'..\Samples_C3D\Sample27')
+# src_c3d_path = os.path.join(c3d_sample_dir_path, 'kyowadengyo.c3d')
+
 # c3d_sample_dir_path = os.path.join(cwd, r'..\Samples_C3D\Sample10')
 # src_c3d_path = os.path.join(c3d_sample_dir_path, 'TYPE-4a.c3d')
 
