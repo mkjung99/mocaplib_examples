@@ -34,8 +34,8 @@ src_c3d_path = os.path.join(c3d_sample_dir_path, 'pyCGM2 lower limb CGM24 Walkin
 
 acq = ba.open_c3d(src_c3d_path)
 
-fp_output = ba.get_fp_output(acq, None)
-wc_output = ba.get_fp_wrench(acq, 0.0)
+fp_output = ba.get_fp_output(acq, threshold=0.0, filt_fc=None)
+wc_output = ba.get_fp_wrench(acq, threshold=0.0)
 
 f_lab_btk = wc_output[0]['FORCE']
 f_lab_manual = fp_output[0]['F_COP_LAB']
