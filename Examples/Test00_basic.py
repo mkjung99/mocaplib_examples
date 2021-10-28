@@ -30,4 +30,4 @@ dict_fp = ba.get_fp_info(acq)
 
 ret = ba.add_metadata(acq, 'MANUFACTURER', 'EDITED', 'BTK', 'TEST')
 
-ba.save_c3d(acq, 'result.c3d')
+ba.save_c3d(acq, 'Test00_result.c3d')
